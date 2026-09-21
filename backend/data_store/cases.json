@@ -1,0 +1,42 @@
+[
+  {
+    "id": "case-001",
+    "caseId": "CF-2026-001",
+    "complainantName": "Rohit Sharma",
+    "complaintType": "Financial Fraud",
+    "dateOfIncident": "2026-08-12",
+    "complaintDetails": "Victim reported a UPI fraud involving multiple fake transfers.",
+    "status": "analysis_complete",
+    "createdAt": "2026-09-21T15:21:04.591Z"
+  },
+  {
+    "id": "case-1790004197357",
+    "caseId": "CF-2026-974",
+    "complainantName": "Demo Case",
+    "complaintType": "Financial Fraud",
+    "dateOfIncident": "2026-09-21",
+    "complaintDetails": "Demo Case",
+    "status": "created",
+    "createdAt": "2026-09-21T15:23:17.357Z"
+  },
+  {
+    "id": "case-1790006013353",
+    "caseId": "CF-2026-389",
+    "complainantName": "Demo Case",
+    "complaintType": "Financial Fraud",
+    "dateOfIncident": "2026-09-21",
+    "complaintDetails": "Demo Case",
+    "status": "created",
+    "createdAt": "2026-09-21T15:53:33.353Z"
+  },
+  {
+    "id": "case-1790010606756",
+    "caseId": "CF-2025-BEED01",
+    "complainantName": "Maharashtra Cyber Crime Police (25 NCCRP Complaints)",
+    "complaintType": "Money Mule Syndicate / Pass-Through Fraud",
+    "dateOfIncident": "2025-09-08",
+    "complaintDetails": "Investigation into a high-volume Money Mule network where 25 separate cybercrime complaints across 12 Maharashtra districts (Beed, Nagpur, Sambhajinagar, Nashik, Solapur) were linked to a single primary HDFC pass-through account (ACC_BEED_MULE01). Over Rs 23.73 Crore was routed between Sep 2025 and Apr 2026 and immediately cash out via ATMs, self-cheques, and IMPS/RTGS layering to Pune & Mumbai.",
+    "status": "created",
+    "createdAt": "2026-09-21T17:10:06.756Z"
+  }
+]

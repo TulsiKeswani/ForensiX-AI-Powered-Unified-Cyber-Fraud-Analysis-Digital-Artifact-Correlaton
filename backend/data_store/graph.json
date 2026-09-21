@@ -1,0 +1,1214 @@
+{
+  "CF-2026-001": {
+    "nodes": [
+      {
+        "id": "ACC001",
+        "type": "BANK_ACCOUNT",
+        "label": "Mule Account 1",
+        "value": "ACC001",
+        "priority": "high",
+        "riskScore": 92
+      },
+      {
+        "id": "PHONE_001",
+        "type": "PHONE",
+        "label": "Victim Phone",
+        "value": "9876543210",
+        "priority": "normal",
+        "riskScore": 20
+      },
+      {
+        "id": "IMEI_001",
+        "type": "IMEI",
+        "label": "Shared IMEI",
+        "value": "356782021345678",
+        "priority": "high",
+        "riskScore": 85
+      },
+      {
+        "id": "PHONE_002",
+        "type": "PHONE",
+        "label": "Suspect Phone",
+        "value": "9123456789",
+        "priority": "high",
+        "riskScore": 87
+      },
+      {
+        "id": "APK_001",
+        "type": "APK",
+        "label": "Malicious APK",
+        "value": "com.fake.app",
+        "priority": "medium",
+        "riskScore": 61
+      },
+      {
+        "id": "ACC003",
+        "type": "BANK_ACCOUNT",
+        "label": "Cash-out Account",
+        "value": "ACC003",
+        "priority": "high",
+        "riskScore": 95
+      },
+      {
+        "id": "UPI_001",
+        "type": "UPI_ID",
+        "label": "Suspect UPI",
+        "value": "user@upi",
+        "priority": "high",
+        "riskScore": 76
+      },
+      {
+        "id": "IP_001",
+        "type": "IP_ADDRESS",
+        "label": "Gateway IP",
+        "value": "103.21.45.67",
+        "priority": "medium",
+        "riskScore": 68
+      }
+    ],
+    "edges": [
+      {
+        "id": "REL_001",
+        "source": "PHONE_001",
+        "target": "ACC001",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED_TO",
+        "evidenceId": "EV-001"
+      },
+      {
+        "id": "REL_002",
+        "source": "PHONE_002",
+        "target": "IMEI_001",
+        "type": "ASSOCIATED_WITH",
+        "label": "ASSOCIATED_WITH",
+        "evidenceId": "EV-003"
+      },
+      {
+        "id": "REL_003",
+        "source": "PHONE_002",
+        "target": "UPI_001",
+        "type": "LINKED_TO",
+        "label": "LINKED_TO",
+        "evidenceId": "EV-001"
+      },
+      {
+        "id": "REL_004",
+        "source": "UPI_001",
+        "target": "ACC001",
+        "type": "LINKED_TO",
+        "label": "LINKED_TO",
+        "evidenceId": "EV-002"
+      },
+      {
+        "id": "REL_005",
+        "source": "ACC001",
+        "target": "ACC003",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED_TO",
+        "evidenceId": "EV-002"
+      },
+      {
+        "id": "REL_006",
+        "source": "PHONE_002",
+        "target": "APK_001",
+        "type": "INSTALLED",
+        "label": "INSTALLED",
+        "evidenceId": "EV-003"
+      },
+      {
+        "id": "REL_007",
+        "source": "IP_001",
+        "target": "ACC001",
+        "type": "ACCESSED_FROM",
+        "label": "ACCESSED_FROM",
+        "evidenceId": "EV-003"
+      }
+    ]
+  },
+  "CF-2026-974": {
+    "nodes": [
+      {
+        "id": "PHONE_VIC_BED",
+        "type": "PHONE",
+        "label": "Victim Beed Resident",
+        "value": "+91 98760 01001",
+        "priority": "low",
+        "riskScore": 12,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_NGP",
+        "type": "PHONE",
+        "label": "Victim Nagpur Trader",
+        "value": "+91 98220 02001",
+        "priority": "low",
+        "riskScore": 15,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_AUR",
+        "type": "PHONE",
+        "label": "Victim Sambhajinagar",
+        "value": "+91 98230 03001",
+        "priority": "low",
+        "riskScore": 14,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_NSK",
+        "type": "PHONE",
+        "label": "Victim Nashik Businessman",
+        "value": "+91 98240 04001",
+        "priority": "low",
+        "riskScore": 10,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_SOL",
+        "type": "PHONE",
+        "label": "Victim Solapur Investor",
+        "value": "+91 98250 05001",
+        "priority": "low",
+        "riskScore": 11,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_OPERATOR",
+        "type": "PHONE",
+        "label": "Beed Primary Mule Operator",
+        "value": "+91 97654 32100",
+        "priority": "high",
+        "riskScore": 96,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_COORD",
+        "type": "PHONE",
+        "label": "Master Syndicate Coordinator",
+        "value": "+91 98760 01001",
+        "priority": "high",
+        "riskScore": 94,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_FIELD_PUN",
+        "type": "PHONE",
+        "label": "Pune Cash Withdrawal Agent",
+        "value": "+91 98210 01002",
+        "priority": "high",
+        "riskScore": 88,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_FIELD_MUM",
+        "type": "PHONE",
+        "label": "Mumbai Hawala Agent",
+        "value": "+91 98330 01003",
+        "priority": "high",
+        "riskScore": 86,
+        "group": "suspect"
+      },
+      {
+        "id": "ACC_BEED_MULE01",
+        "type": "BANK_ACCOUNT",
+        "label": "Primary Mule Account (HDFC Beed)",
+        "value": "ACC_BEED_MULE01 (₹23.73 Cr Pass-Through)",
+        "priority": "high",
+        "riskScore": 98,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_PUN_MULE02",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (ICICI Pune)",
+        "value": "ACC_PUN_MULE02 (Layer 2)",
+        "priority": "high",
+        "riskScore": 93,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_MUM_MULE03",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (PNB Mumbai)",
+        "value": "ACC_MUM_MULE03 (Layer 2)",
+        "priority": "high",
+        "riskScore": 91,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_CSN_MULE04",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (Kotak Sambhajinagar)",
+        "value": "ACC_CSN_MULE04 (Layer 2)",
+        "priority": "high",
+        "riskScore": 89,
+        "group": "financial"
+      },
+      {
+        "id": "UPI_BEED_PRIMARY",
+        "type": "UPI_ID",
+        "label": "Primary Mule UPI",
+        "value": "mulebeed@upi",
+        "priority": "high",
+        "riskScore": 92,
+        "group": "financial"
+      },
+      {
+        "id": "IMEI_BEED_01",
+        "type": "IMEI",
+        "label": "Coordinating Handset (OnePlus Nord)",
+        "value": "356001234567890",
+        "priority": "high",
+        "riskScore": 90,
+        "group": "device"
+      },
+      {
+        "id": "IMEI_PUNE_02",
+        "type": "IMEI",
+        "label": "Field Agent Handset (Samsung A54)",
+        "value": "357002345678901",
+        "priority": "high",
+        "riskScore": 84,
+        "group": "device"
+      },
+      {
+        "id": "IP_C2_BEED",
+        "type": "IP_ADDRESS",
+        "label": "Scam Control Server / C2 Gateway",
+        "value": "103.21.45.67",
+        "priority": "high",
+        "riskScore": 95,
+        "group": "network"
+      },
+      {
+        "id": "IP_PROXY_TELEGRAM",
+        "type": "IP_ADDRESS",
+        "label": "Telegram Proxy Relay",
+        "value": "157.16.62.20",
+        "priority": "medium",
+        "riskScore": 87,
+        "group": "network"
+      },
+      {
+        "id": "APK_BEED_APP",
+        "type": "APK",
+        "label": "Beed Fake Investment Portal APK",
+        "value": "com.beed.investment.helper",
+        "priority": "high",
+        "riskScore": 96,
+        "group": "malware"
+      },
+      {
+        "id": "EMAIL_SCAM",
+        "type": "EMAIL",
+        "label": "Phishing Campaign Sender",
+        "value": "support@beed-investment-portal.com",
+        "priority": "high",
+        "riskScore": 91,
+        "group": "email"
+      }
+    ],
+    "edges": [
+      {
+        "id": "E_VIC1_BEED",
+        "source": "PHONE_VIC_BED",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹20.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC2_BEED",
+        "source": "PHONE_VIC_NGP",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹60.5 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC3_BEED",
+        "source": "PHONE_VIC_AUR",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹47.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC4_BEED",
+        "source": "PHONE_VIC_NSK",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹59.5 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC5_BEED",
+        "source": "PHONE_VIC_SOL",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹48.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_UPI_ACC",
+        "source": "UPI_BEED_PRIMARY",
+        "target": "ACC_BEED_MULE01",
+        "type": "LINKED_TO",
+        "label": "ROUTED TO PRIMARY MULE",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_01",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_PUN_MULE02",
+        "type": "TRANSFERRED_TO",
+        "label": "IMPS SPLIT (₹6.5 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_02",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_MUM_MULE03",
+        "type": "TRANSFERRED_TO",
+        "label": "NEFT/RTGS SPLIT (₹8.4 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_03",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_CSN_MULE04",
+        "type": "TRANSFERRED_TO",
+        "label": "RAPID TRANSFER (₹4.2 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CASHOUT_PUN",
+        "source": "ACC_PUN_MULE02",
+        "target": "PHONE_FIELD_PUN",
+        "type": "CASHED_OUT_BY",
+        "label": "ATM/CHEQUE CASH OUT (₹3.8 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CASHOUT_MUM",
+        "source": "ACC_MUM_MULE03",
+        "target": "PHONE_FIELD_MUM",
+        "type": "CASHED_OUT_BY",
+        "label": "HAWALA & ATM CASH OUT (₹5.2 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CDR_01",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_COORD",
+        "type": "CALLED",
+        "label": "COORDINATED (34× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_CDR_02",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_FIELD_PUN",
+        "type": "CALLED",
+        "label": "INSTRUCTED (28× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_CDR_03",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_FIELD_MUM",
+        "type": "CALLED",
+        "label": "INSTRUCTED (19× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_DEV_01",
+        "source": "PHONE_OPERATOR",
+        "target": "IMEI_BEED_01",
+        "type": "ASSOCIATED_WITH",
+        "label": "OPERATED ON HANDSET",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_DEV_02",
+        "source": "PHONE_FIELD_PUN",
+        "target": "IMEI_PUNE_02",
+        "type": "ASSOCIATED_WITH",
+        "label": "OPERATED ON HANDSET",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_IP_01",
+        "source": "IMEI_BEED_01",
+        "target": "IP_C2_BEED",
+        "type": "ACCESSED_FROM",
+        "label": "C2 PANIC BEACON (103.21.45.67)",
+        "evidenceId": "ipdr_sample.csv"
+      },
+      {
+        "id": "E_IP_02",
+        "source": "IMEI_PUNE_02",
+        "target": "IP_PROXY_TELEGRAM",
+        "type": "ACCESSED_FROM",
+        "label": "TELEGRAM RELAY (157.16.62.20)",
+        "evidenceId": "ipdr_sample.csv"
+      },
+      {
+        "id": "E_APK_01",
+        "source": "IMEI_BEED_01",
+        "target": "APK_BEED_APP",
+        "type": "INSTALLED",
+        "label": "SIDELOADED SCAM APK",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_APK_02",
+        "source": "APK_BEED_APP",
+        "target": "IP_C2_BEED",
+        "type": "COMMUNICATES_WITH",
+        "label": "EXFILTRATED OTP & CREDS",
+        "evidenceId": "apk_metadata.json"
+      },
+      {
+        "id": "E_EMAIL_01",
+        "source": "EMAIL_SCAM",
+        "target": "PHONE_VIC_BED",
+        "type": "SENT_TO",
+        "label": "PHISHING EMAIL CAMPAIGN",
+        "evidenceId": "phishing_email.eml"
+      },
+      {
+        "id": "E_EMAIL_02",
+        "source": "EMAIL_SCAM",
+        "target": "APK_BEED_APP",
+        "type": "DISTRIBUTED",
+        "label": "APK DOWNLOAD LINK",
+        "evidenceId": "phishing_email.eml"
+      }
+    ]
+  },
+  "CF-2026-389": {
+    "nodes": [
+      {
+        "id": "PHONE_VIC_BED",
+        "type": "PHONE",
+        "label": "Victim Beed Resident",
+        "value": "+91 98760 01001",
+        "priority": "low",
+        "riskScore": 12,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_NGP",
+        "type": "PHONE",
+        "label": "Victim Nagpur Trader",
+        "value": "+91 98220 02001",
+        "priority": "low",
+        "riskScore": 15,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_AUR",
+        "type": "PHONE",
+        "label": "Victim Sambhajinagar",
+        "value": "+91 98230 03001",
+        "priority": "low",
+        "riskScore": 14,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_NSK",
+        "type": "PHONE",
+        "label": "Victim Nashik Businessman",
+        "value": "+91 98240 04001",
+        "priority": "low",
+        "riskScore": 10,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_SOL",
+        "type": "PHONE",
+        "label": "Victim Solapur Investor",
+        "value": "+91 98250 05001",
+        "priority": "low",
+        "riskScore": 11,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_OPERATOR",
+        "type": "PHONE",
+        "label": "Beed Primary Mule Operator",
+        "value": "+91 97654 32100",
+        "priority": "high",
+        "riskScore": 96,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_COORD",
+        "type": "PHONE",
+        "label": "Master Syndicate Coordinator",
+        "value": "+91 98760 01001",
+        "priority": "high",
+        "riskScore": 94,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_FIELD_PUN",
+        "type": "PHONE",
+        "label": "Pune Cash Withdrawal Agent",
+        "value": "+91 98210 01002",
+        "priority": "high",
+        "riskScore": 88,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_FIELD_MUM",
+        "type": "PHONE",
+        "label": "Mumbai Hawala Agent",
+        "value": "+91 98330 01003",
+        "priority": "high",
+        "riskScore": 86,
+        "group": "suspect"
+      },
+      {
+        "id": "ACC_BEED_MULE01",
+        "type": "BANK_ACCOUNT",
+        "label": "Primary Mule Account (HDFC Beed)",
+        "value": "ACC_BEED_MULE01 (₹23.73 Cr Pass-Through)",
+        "priority": "high",
+        "riskScore": 98,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_PUN_MULE02",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (ICICI Pune)",
+        "value": "ACC_PUN_MULE02 (Layer 2)",
+        "priority": "high",
+        "riskScore": 93,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_MUM_MULE03",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (PNB Mumbai)",
+        "value": "ACC_MUM_MULE03 (Layer 2)",
+        "priority": "high",
+        "riskScore": 91,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_CSN_MULE04",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (Kotak Sambhajinagar)",
+        "value": "ACC_CSN_MULE04 (Layer 2)",
+        "priority": "high",
+        "riskScore": 89,
+        "group": "financial"
+      },
+      {
+        "id": "UPI_BEED_PRIMARY",
+        "type": "UPI_ID",
+        "label": "Primary Mule UPI",
+        "value": "mulebeed@upi",
+        "priority": "high",
+        "riskScore": 92,
+        "group": "financial"
+      },
+      {
+        "id": "IMEI_BEED_01",
+        "type": "IMEI",
+        "label": "Coordinating Handset (OnePlus Nord)",
+        "value": "356001234567890",
+        "priority": "high",
+        "riskScore": 90,
+        "group": "device"
+      },
+      {
+        "id": "IMEI_PUNE_02",
+        "type": "IMEI",
+        "label": "Field Agent Handset (Samsung A54)",
+        "value": "357002345678901",
+        "priority": "high",
+        "riskScore": 84,
+        "group": "device"
+      },
+      {
+        "id": "IP_C2_BEED",
+        "type": "IP_ADDRESS",
+        "label": "Scam Control Server / C2 Gateway",
+        "value": "103.21.45.67",
+        "priority": "high",
+        "riskScore": 95,
+        "group": "network"
+      },
+      {
+        "id": "IP_PROXY_TELEGRAM",
+        "type": "IP_ADDRESS",
+        "label": "Telegram Proxy Relay",
+        "value": "157.16.62.20",
+        "priority": "medium",
+        "riskScore": 87,
+        "group": "network"
+      },
+      {
+        "id": "APK_BEED_APP",
+        "type": "APK",
+        "label": "Beed Fake Investment Portal APK",
+        "value": "com.beed.investment.helper",
+        "priority": "high",
+        "riskScore": 96,
+        "group": "malware"
+      },
+      {
+        "id": "EMAIL_SCAM",
+        "type": "EMAIL",
+        "label": "Phishing Campaign Sender",
+        "value": "support@beed-investment-portal.com",
+        "priority": "high",
+        "riskScore": 91,
+        "group": "email"
+      }
+    ],
+    "edges": [
+      {
+        "id": "E_VIC1_BEED",
+        "source": "PHONE_VIC_BED",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹20.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC2_BEED",
+        "source": "PHONE_VIC_NGP",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹60.5 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC3_BEED",
+        "source": "PHONE_VIC_AUR",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹47.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC4_BEED",
+        "source": "PHONE_VIC_NSK",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹59.5 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC5_BEED",
+        "source": "PHONE_VIC_SOL",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹48.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_UPI_ACC",
+        "source": "UPI_BEED_PRIMARY",
+        "target": "ACC_BEED_MULE01",
+        "type": "LINKED_TO",
+        "label": "ROUTED TO PRIMARY MULE",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_01",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_PUN_MULE02",
+        "type": "TRANSFERRED_TO",
+        "label": "IMPS SPLIT (₹6.5 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_02",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_MUM_MULE03",
+        "type": "TRANSFERRED_TO",
+        "label": "NEFT/RTGS SPLIT (₹8.4 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_03",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_CSN_MULE04",
+        "type": "TRANSFERRED_TO",
+        "label": "RAPID TRANSFER (₹4.2 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CASHOUT_PUN",
+        "source": "ACC_PUN_MULE02",
+        "target": "PHONE_FIELD_PUN",
+        "type": "CASHED_OUT_BY",
+        "label": "ATM/CHEQUE CASH OUT (₹3.8 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CASHOUT_MUM",
+        "source": "ACC_MUM_MULE03",
+        "target": "PHONE_FIELD_MUM",
+        "type": "CASHED_OUT_BY",
+        "label": "HAWALA & ATM CASH OUT (₹5.2 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CDR_01",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_COORD",
+        "type": "CALLED",
+        "label": "COORDINATED (34× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_CDR_02",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_FIELD_PUN",
+        "type": "CALLED",
+        "label": "INSTRUCTED (28× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_CDR_03",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_FIELD_MUM",
+        "type": "CALLED",
+        "label": "INSTRUCTED (19× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_DEV_01",
+        "source": "PHONE_OPERATOR",
+        "target": "IMEI_BEED_01",
+        "type": "ASSOCIATED_WITH",
+        "label": "OPERATED ON HANDSET",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_DEV_02",
+        "source": "PHONE_FIELD_PUN",
+        "target": "IMEI_PUNE_02",
+        "type": "ASSOCIATED_WITH",
+        "label": "OPERATED ON HANDSET",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_IP_01",
+        "source": "IMEI_BEED_01",
+        "target": "IP_C2_BEED",
+        "type": "ACCESSED_FROM",
+        "label": "C2 PANIC BEACON (103.21.45.67)",
+        "evidenceId": "ipdr_sample.csv"
+      },
+      {
+        "id": "E_IP_02",
+        "source": "IMEI_PUNE_02",
+        "target": "IP_PROXY_TELEGRAM",
+        "type": "ACCESSED_FROM",
+        "label": "TELEGRAM RELAY (157.16.62.20)",
+        "evidenceId": "ipdr_sample.csv"
+      },
+      {
+        "id": "E_APK_01",
+        "source": "IMEI_BEED_01",
+        "target": "APK_BEED_APP",
+        "type": "INSTALLED",
+        "label": "SIDELOADED SCAM APK",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_APK_02",
+        "source": "APK_BEED_APP",
+        "target": "IP_C2_BEED",
+        "type": "COMMUNICATES_WITH",
+        "label": "EXFILTRATED OTP & CREDS",
+        "evidenceId": "apk_metadata.json"
+      },
+      {
+        "id": "E_EMAIL_01",
+        "source": "EMAIL_SCAM",
+        "target": "PHONE_VIC_BED",
+        "type": "SENT_TO",
+        "label": "PHISHING EMAIL CAMPAIGN",
+        "evidenceId": "phishing_email.eml"
+      },
+      {
+        "id": "E_EMAIL_02",
+        "source": "EMAIL_SCAM",
+        "target": "APK_BEED_APP",
+        "type": "DISTRIBUTED",
+        "label": "APK DOWNLOAD LINK",
+        "evidenceId": "phishing_email.eml"
+      }
+    ]
+  },
+  "CF-2025-BEED01": {
+    "nodes": [
+      {
+        "id": "PHONE_VIC_BED",
+        "type": "PHONE",
+        "label": "Victim Beed Resident",
+        "value": "+91 98760 01001",
+        "priority": "low",
+        "riskScore": 12,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_NGP",
+        "type": "PHONE",
+        "label": "Victim Nagpur Trader",
+        "value": "+91 98220 02001",
+        "priority": "low",
+        "riskScore": 15,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_AUR",
+        "type": "PHONE",
+        "label": "Victim Sambhajinagar",
+        "value": "+91 98230 03001",
+        "priority": "low",
+        "riskScore": 14,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_NSK",
+        "type": "PHONE",
+        "label": "Victim Nashik Businessman",
+        "value": "+91 98240 04001",
+        "priority": "low",
+        "riskScore": 10,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_VIC_SOL",
+        "type": "PHONE",
+        "label": "Victim Solapur Investor",
+        "value": "+91 98250 05001",
+        "priority": "low",
+        "riskScore": 11,
+        "group": "victim"
+      },
+      {
+        "id": "PHONE_OPERATOR",
+        "type": "PHONE",
+        "label": "Beed Primary Mule Operator",
+        "value": "+91 97654 32100",
+        "priority": "high",
+        "riskScore": 96,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_COORD",
+        "type": "PHONE",
+        "label": "Master Syndicate Coordinator",
+        "value": "+91 98760 01001",
+        "priority": "high",
+        "riskScore": 94,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_FIELD_PUN",
+        "type": "PHONE",
+        "label": "Pune Cash Withdrawal Agent",
+        "value": "+91 98210 01002",
+        "priority": "high",
+        "riskScore": 88,
+        "group": "suspect"
+      },
+      {
+        "id": "PHONE_FIELD_MUM",
+        "type": "PHONE",
+        "label": "Mumbai Hawala Agent",
+        "value": "+91 98330 01003",
+        "priority": "high",
+        "riskScore": 86,
+        "group": "suspect"
+      },
+      {
+        "id": "ACC_BEED_MULE01",
+        "type": "BANK_ACCOUNT",
+        "label": "Primary Mule Account (HDFC Beed)",
+        "value": "ACC_BEED_MULE01 (₹23.73 Cr Pass-Through)",
+        "priority": "high",
+        "riskScore": 98,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_PUN_MULE02",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (ICICI Pune)",
+        "value": "ACC_PUN_MULE02 (Layer 2)",
+        "priority": "high",
+        "riskScore": 93,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_MUM_MULE03",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (PNB Mumbai)",
+        "value": "ACC_MUM_MULE03 (Layer 2)",
+        "priority": "high",
+        "riskScore": 91,
+        "group": "financial"
+      },
+      {
+        "id": "ACC_CSN_MULE04",
+        "type": "BANK_ACCOUNT",
+        "label": "Tier-2 Mule Account (Kotak Sambhajinagar)",
+        "value": "ACC_CSN_MULE04 (Layer 2)",
+        "priority": "high",
+        "riskScore": 89,
+        "group": "financial"
+      },
+      {
+        "id": "UPI_BEED_PRIMARY",
+        "type": "UPI_ID",
+        "label": "Primary Mule UPI",
+        "value": "mulebeed@upi",
+        "priority": "high",
+        "riskScore": 92,
+        "group": "financial"
+      },
+      {
+        "id": "IMEI_BEED_01",
+        "type": "IMEI",
+        "label": "Coordinating Handset (OnePlus Nord)",
+        "value": "356001234567890",
+        "priority": "high",
+        "riskScore": 90,
+        "group": "device"
+      },
+      {
+        "id": "IMEI_PUNE_02",
+        "type": "IMEI",
+        "label": "Field Agent Handset (Samsung A54)",
+        "value": "357002345678901",
+        "priority": "high",
+        "riskScore": 84,
+        "group": "device"
+      },
+      {
+        "id": "IP_C2_BEED",
+        "type": "IP_ADDRESS",
+        "label": "Scam Control Server / C2 Gateway",
+        "value": "103.21.45.67",
+        "priority": "high",
+        "riskScore": 95,
+        "group": "network"
+      },
+      {
+        "id": "IP_PROXY_TELEGRAM",
+        "type": "IP_ADDRESS",
+        "label": "Telegram Proxy Relay",
+        "value": "157.16.62.20",
+        "priority": "medium",
+        "riskScore": 87,
+        "group": "network"
+      },
+      {
+        "id": "APK_BEED_APP",
+        "type": "APK",
+        "label": "Beed Fake Investment Portal APK",
+        "value": "com.beed.investment.helper",
+        "priority": "high",
+        "riskScore": 96,
+        "group": "malware"
+      },
+      {
+        "id": "EMAIL_SCAM",
+        "type": "EMAIL",
+        "label": "Phishing Campaign Sender",
+        "value": "support@beed-investment-portal.com",
+        "priority": "high",
+        "riskScore": 91,
+        "group": "email"
+      }
+    ],
+    "edges": [
+      {
+        "id": "E_VIC1_BEED",
+        "source": "PHONE_VIC_BED",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹20.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC2_BEED",
+        "source": "PHONE_VIC_NGP",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹60.5 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC3_BEED",
+        "source": "PHONE_VIC_AUR",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹47.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC4_BEED",
+        "source": "PHONE_VIC_NSK",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹59.5 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_VIC5_BEED",
+        "source": "PHONE_VIC_SOL",
+        "target": "ACC_BEED_MULE01",
+        "type": "TRANSFERRED_TO",
+        "label": "TRANSFERRED ₹48.0 Lakhs",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_UPI_ACC",
+        "source": "UPI_BEED_PRIMARY",
+        "target": "ACC_BEED_MULE01",
+        "type": "LINKED_TO",
+        "label": "ROUTED TO PRIMARY MULE",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_01",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_PUN_MULE02",
+        "type": "TRANSFERRED_TO",
+        "label": "IMPS SPLIT (₹6.5 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_02",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_MUM_MULE03",
+        "type": "TRANSFERRED_TO",
+        "label": "NEFT/RTGS SPLIT (₹8.4 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_LAYER_03",
+        "source": "ACC_BEED_MULE01",
+        "target": "ACC_CSN_MULE04",
+        "type": "TRANSFERRED_TO",
+        "label": "RAPID TRANSFER (₹4.2 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CASHOUT_PUN",
+        "source": "ACC_PUN_MULE02",
+        "target": "PHONE_FIELD_PUN",
+        "type": "CASHED_OUT_BY",
+        "label": "ATM/CHEQUE CASH OUT (₹3.8 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CASHOUT_MUM",
+        "source": "ACC_MUM_MULE03",
+        "target": "PHONE_FIELD_MUM",
+        "type": "CASHED_OUT_BY",
+        "label": "HAWALA & ATM CASH OUT (₹5.2 Cr)",
+        "evidenceId": "bank_transactions.csv"
+      },
+      {
+        "id": "E_CDR_01",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_COORD",
+        "type": "CALLED",
+        "label": "COORDINATED (34× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_CDR_02",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_FIELD_PUN",
+        "type": "CALLED",
+        "label": "INSTRUCTED (28× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_CDR_03",
+        "source": "PHONE_OPERATOR",
+        "target": "PHONE_FIELD_MUM",
+        "type": "CALLED",
+        "label": "INSTRUCTED (19× Calls)",
+        "evidenceId": "cdr_sample.csv"
+      },
+      {
+        "id": "E_DEV_01",
+        "source": "PHONE_OPERATOR",
+        "target": "IMEI_BEED_01",
+        "type": "ASSOCIATED_WITH",
+        "label": "OPERATED ON HANDSET",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_DEV_02",
+        "source": "PHONE_FIELD_PUN",
+        "target": "IMEI_PUNE_02",
+        "type": "ASSOCIATED_WITH",
+        "label": "OPERATED ON HANDSET",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_IP_01",
+        "source": "IMEI_BEED_01",
+        "target": "IP_C2_BEED",
+        "type": "ACCESSED_FROM",
+        "label": "C2 PANIC BEACON (103.21.45.67)",
+        "evidenceId": "ipdr_sample.csv"
+      },
+      {
+        "id": "E_IP_02",
+        "source": "IMEI_PUNE_02",
+        "target": "IP_PROXY_TELEGRAM",
+        "type": "ACCESSED_FROM",
+        "label": "TELEGRAM RELAY (157.16.62.20)",
+        "evidenceId": "ipdr_sample.csv"
+      },
+      {
+        "id": "E_APK_01",
+        "source": "IMEI_BEED_01",
+        "target": "APK_BEED_APP",
+        "type": "INSTALLED",
+        "label": "SIDELOADED SCAM APK",
+        "evidenceId": "mobile_logs.json"
+      },
+      {
+        "id": "E_APK_02",
+        "source": "APK_BEED_APP",
+        "target": "IP_C2_BEED",
+        "type": "COMMUNICATES_WITH",
+        "label": "EXFILTRATED OTP & CREDS",
+        "evidenceId": "apk_metadata.json"
+      },
+      {
+        "id": "E_EMAIL_01",
+        "source": "EMAIL_SCAM",
+        "target": "PHONE_VIC_BED",
+        "type": "SENT_TO",
+        "label": "PHISHING EMAIL CAMPAIGN",
+        "evidenceId": "phishing_email.eml"
+      },
+      {
+        "id": "E_EMAIL_02",
+        "source": "EMAIL_SCAM",
+        "target": "APK_BEED_APP",
+        "type": "DISTRIBUTED",
+        "label": "APK DOWNLOAD LINK",
+        "evidenceId": "phishing_email.eml"
+      }
+    ]
+  }
+}
