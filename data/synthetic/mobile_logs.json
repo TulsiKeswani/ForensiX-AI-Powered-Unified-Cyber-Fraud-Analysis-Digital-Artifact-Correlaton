@@ -1,0 +1,88 @@
+{
+  "case_id": "CF-2025-BEED01",
+  "extraction_timestamp": "2025-09-10T10:30:00+05:30",
+  "device_analysis": [
+    {
+      "imei": "356001234567890",
+      "model": "OnePlus Nord CE",
+      "manufacturer": "OnePlus",
+      "android_version": "14",
+      "sim_history": [
+        {
+          "sim_slot": 1,
+          "iccid": "8991404022120076543",
+          "msisdn": "9765432100",
+          "imsi": "404010001001001",
+          "operator": "JioSIM",
+          "inserted_at": "2025-08-15T08:00:00+05:30",
+          "removed_at": null,
+          "status": "ACTIVE"
+        },
+        {
+          "sim_slot": 2,
+          "iccid": "8991404035980012341",
+          "msisdn": "9876001001",
+          "imsi": "404010001001002",
+          "operator": "Airtel",
+          "inserted_at": "2025-08-01T14:00:00+05:30",
+          "removed_at": null,
+          "status": "ACTIVE"
+        }
+      ],
+      "installed_apps": [
+        {
+          "package_name": "com.beed.investment.helper",
+          "app_name": "Beed Money App",
+          "version": "2.1.0",
+          "install_date": "2025-08-20T19:05:00+05:30",
+          "source": "SIDELOADED",
+          "sha256": "beed7c2d1e9b4f6a8c0d2e4f1a3b5c7d9e1f3a5b7",
+          "permissions": [
+            "READ_CONTACTS", "READ_SMS", "SEND_SMS", "READ_CALL_LOG",
+            "INTERNET", "READ_PHONE_STATE", "RECEIVE_BOOT_COMPLETED"
+          ],
+          "malicious_indicators": [
+            "SMS forwarding for OTP theft",
+            "C2 server connectivity: 103.21.45.67",
+            "Auto background synchronization"
+          ]
+        }
+      ],
+      "location_history": [
+        { "timestamp": "2025-09-08T11:00:00+05:30", "lat": 18.9892, "lon": 75.7601, "accuracy_m": 35, "tower_id": "TW-BED-014", "location": "Beed City Center, Beed, MH" },
+        { "timestamp": "2025-09-09T14:10:00+05:30", "lat": 18.9892, "lon": 75.7601, "accuracy_m": 40, "tower_id": "TW-BED-014", "location": "Beed City Center, Beed, MH" },
+        { "timestamp": "2025-09-15T11:00:00+05:30", "lat": 18.5204, "lon": 73.8567, "accuracy_m": 50, "tower_id": "TW-PUN-088", "location": "Kothrud, Pune, MH" }
+      ],
+      "c2_communications": [
+        { "timestamp": "2025-09-08T11:00:15+05:30", "remote_ip": "103.21.45.67", "remote_port": 443, "bytes_sent": 15240, "bytes_recv": 198720, "type": "HTTPS_POST", "content_hint": "Mule account credentials exfil" },
+        { "timestamp": "2025-09-08T11:05:00+05:30", "remote_ip": "157.16.62.20", "remote_port": 443, "bytes_sent": 28800, "bytes_recv": 340000, "type": "HTTPS_POST", "content_hint": "Telegram bot notification of ₹500,000 victim deposit" }
+      ]
+    }
+  ],
+  "sim_swap_events": [
+    {
+      "msisdn": "9765432100",
+      "event_type": "SIM_SWAP_DETECTED",
+      "old_iccid": "8991404035980099999",
+      "new_iccid": "8991404022120076543",
+      "timestamp": "2025-08-15T08:00:00+05:30",
+      "operator": "JioSIM",
+      "requesting_imei": "356001234567890",
+      "risk_flag": "HIGH - Rapid SIM Swap preceding ₹23.73 Cr Mule operations"
+    }
+  ],
+  "entity_summary": {
+    "total_devices": 3,
+    "total_sims": 4,
+    "shared_imei_groups": [
+      {
+        "imei": "356001234560000",
+        "associated_numbers": ["9765432100", "9876001001"],
+        "risk": "CRITICAL"
+      }
+    ],
+    "malicious_apps_found": 1,
+    "c2_ips_identified": ["103.21.45.67", "157.16.62.20"],
+    "total_location_pings": 15
+  }
+}
